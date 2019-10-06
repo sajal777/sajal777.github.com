@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ONLINE NOTES</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="styling.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!--navigation-->
+    <nav role = "navigation" class="navbar navbar-custom navbar-fixed-top">
+      <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand">Online Notes</a>
+            <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
+              <span class="sr-only">Toogle Navigation</span>
+              <span class="icon-bar"></span>
+
+              <span class="icon-bar"></span>
+
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li> 
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+
+             <ul class="nav navbar-nav navbar-right">
+              <li><a href="#loginModal" data-toggle="modal">Login</a></li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
+    <!--jumbotron-->
+    <div class="jumbotron">
+      <h1>Online Notes App</h1>
+      <p>Your Notes with you wherever you go.</p>
+      <p>Easy to use,protects all your notes!</p>
+      <button type="button" class="btn btn-lg green sign-up" data-target="#signupModal" data-toggle="modal">Sign up-it's free</button>
+    </div>
+
+    <!--sign-up form-->
+    <form method="post" id="signupform">
+       <div class="modal" id="signupModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 id="myModalLabel">
+                Sign up today and start using our Onlin Notes App:
+              </h4>
+            </div>
+            <div class="modal-body">
+              <!--sign-up mesage from PHP file-->
+              <div id="signupmessage"></div>
+                <div class="form-group">
+                  <label class="sr-only" for="username">username:</label>
+                  <input type="text" class="form-control" id="username" placeholder="Username" name="username" maxlength="30" >
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email Address:</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" name="email" maxlength="50">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="password">Password:</label>
+                  <input type="password" class="form-control" id="password" placeholder="Choose a password" name="password" maxlength="30">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="password">Confirm Password:</label>
+                  <input type="password" class="form-control" id="password2" placeholder="Confirm Password" name="password2" maxlength="30">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" name="signup" class="btn green" value="signup">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!--Login-in form-->
+    <form method="post" id="loginform">
+       <div class="modal" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 id="myModalLabel">
+                Login:
+              </h4>
+            </div>
+            <div class="modal-body">
+              <!--login-in mesage from PHP file-->
+              <div id="loginmessage">
+              </div>
+                <div class="form-group">
+                  <label class="sr-only" for="loginemail">Email :</label>
+                  <input type="email" class="form-control" id="loginemail" placeholder="Email" name="loginemail" maxlength="50">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="loginpassword">Password:</label>
+                  <input type="password" class="form-control" id="loginpassword" placeholder="Password" name="loginpassword" maxlength="30">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="rememberme" id="rememberme">
+                    Remember me
+                  </label>
+                  <a class="pull-right" style="cursor: pointer" data-dismiss="modal" data-target="#forgotpasswordModal" data-toggle="modal">
+                  Fogot Paasword?
+                </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" name="login" class="btn green" value="login">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Cancel
+              </button>
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal" data-target="#signupModal" data-toggle="modal">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!--forgot Password form-->
+      <form method="post" id="forgotpasswordform">
+       <div class="modal" id="forgotpasswordModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 id="myModalLabel">
+                Forgot Password? Enter your Email:
+              </h4>
+            </div>
+            <div class="modal-body">
+              <!--forgot-password mesage from PHP file-->
+              <div id="forgotpasswordmessage">
+              </div>
+                <div class="form-group">
+                  <label class="sr-only" for="forgotemail">Email :</label>
+                  <input type="email" class="form-control" id="forgotemail" placeholder="Email" name="forgotemail" maxlength="50">
+                </div>
+            <div class="modal-footer">
+              <input type="submit" name="forgotpassword" class="btn green" value="submit">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Cancel
+              </button>
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal" data-target="#signupModal" data-toggle="modal">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </form>
+
+    <div class="footer">
+      <div class="container-fluid">
+        <p>DevelopmentIsland.com Copyright 2019-2020.</p>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
