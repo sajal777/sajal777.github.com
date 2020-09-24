@@ -1,0 +1,34 @@
+.navigation {
+    background: #ce0505;
+    height: 80px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+}
+
+#logo {
+    color: red;
+    background: white;
+    border-radius: 50%;
+    margin-left: 102px;
+    width: 52px;
+    height:52px;
+    font-family: sans-serif;
+    font-size: 38px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    border : solid 1px;
+    border-color: white;
+    text-align: center;
+}
+
+.login {
+    margin-right: 30px;
+}
+
+.signin {
+    margin-right: 30px;
+}
